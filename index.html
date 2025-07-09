@@ -1,131 +1,255 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sackurit – All Services in One App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #d70000;
-      --primary-light: #ff4d4d;
-      --primary-dark: #990000;
       --secondary: #00a8ff;
-      --dark: #121212;
       --light: #ffffff;
-    }* {
-  box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+      --dark: #111;
+      --gray: #f2f2f2;
+    }
 
-body {
-  background: var(--light);
-  color: var(--dark);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Ubuntu', sans-serif;
+    }
 
-nav {
-  background: var(--primary);
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-around;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
 
-h2 {
-  color: var(--primary);
-  margin-bottom: 20px;
-  text-align: center;
-}
+    header h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+    }
 
-.video-section {
-  text-align: center;
-}
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.vertical-video-container {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  height: 600px;
-  margin: 0 auto;
-}
+    .hero-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 25px;
+      object-fit: cover;
+      margin: 30px auto 0;
+      display: block;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
 
-.vertical-video video {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 2px solid var(--primary);
-}
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-.content-block {
-  margin-bottom: 50px;
-}
+    h2 {
+      font-size: 2em;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.content-block p {
-  font-size: 1em;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
 
-footer {
-  background: var(--primary-dark);
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-}
+    .services div {
+      background: var(--gray);
+      padding: 15px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      min-width: 140px;
+      text-align: center;
+    }
 
+    .video-section {
+      text-align: center;
+    }
+
+    .portrait-video-container {
+      width: 100%;
+      max-width: 340px;
+      height: 600px;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .portrait-video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: var(--gray);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .newsletter {
+      background: var(--gray);
+      padding: 30px 20px;
+      border-radius: 25px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .newsletter input {
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      width: 60%;
+      max-width: 300px;
+      margin-right: 10px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+
+    nav {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>SACKURIT</h1>
+    <p>The future of everyday services. One app. Every solution.</p>
+    <img class="hero-image" src="image.png" alt="Sackurit App" />
+  </header>
+
   <nav>
-    <a href="#home">Home</a>
     <a href="#services">Services</a>
+    <a href="#preview">Preview</a>
     <a href="#team">Team</a>
     <a href="#privacy">Privacy</a>
     <a href="#terms">Terms</a>
-  </nav>  <section id="home">
-    <h2>Welcome to Sackurit</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">One app. Every solution. Explore our services and get help instantly, from delivery to legal to tutoring—all in one place.</p>
-  </section>  <section class="video-section" id="preview">
-  <h2>Preview Our App</h2>
-  <div style="width: 100%; max-width: 340px; height: 600px; margin: 0 auto; overflow: hidden; border-radius: 30px; box-shadow: 0 15px 35px rgba(215, 0, 0, 0.3);">
-    <video id="sackuritVideo" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
-      <source src="video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</section>  <section id="services" class="content-block">
-    <h2>Our Services</h2>
-    <p>We offer a wide range of daily services, including on-demand taxis, food and grocery delivery, home maintenance (plumbers, electricians), tutoring, legal assistance, and digital freelance work. Sackurit connects you with the right help in seconds.</p>
-  </section>  <section id="team" class="content-block">
+  </nav>
+
+  <section id="services">
+    <h2>What You Can Do</h2>
+    <div class="services">
+      <div>Taxi</div>
+      <div>Dispatch</div>
+      <div>Laundry</div>
+      <div>Food Delivery</div>
+      <div>Home Tutors</div>
+      <div>Lawyers</div>
+      <div>Mechanics</div>
+      <div>Plumbers</div>
+      <div>Barbers</div>
+      <div>Digital Services</div>
+    </div>
+  </section>
+
+  <section id="preview" class="video-section">
+    <h2>App Preview</h2>
+    <div class="portrait-video-container">
+      <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <section id="team">
     <h2>Our Team</h2>
-    <p>Sackurit was founded by a team of passionate Nigerian innovators with a vision to simplify everyday life. We're developers, designers, and problem-solvers working to bring quality services closer to every home and office.</p>
-  </section>  <section id="privacy" class="content-block">
+    <p style="text-align: center;">We are a group of passionate developers, designers, and visionaries building for Africa. Our goal is to simplify daily services into a single experience that is fast, secure, and trustworthy.</p>
+  </section>
+
+  <section id="privacy">
     <h2>Privacy Policy</h2>
-    <p>We take your privacy seriously. Sackurit does not share your personal data with third parties without consent. We only collect data necessary to provide our services, and all data is protected using top-tier encryption.</p>
-  </section>  <section id="terms" class="content-block">
-    <h2>Terms of Service</h2>
-    <p>By using Sackurit, you agree to our terms, including proper conduct, valid account creation, and lawful usage. We reserve the right to update these terms at any time. Continued use of the app indicates your acceptance of the latest terms.</p>
-  </section>  <footer>
-    &copy; 2025 Sackurit Technologies. Built for Nigeria. Powered by Ubuntu.
+    <p style="text-align: center;">We do not sell or share your personal data. All your info is encrypted and stored securely. We only collect what is necessary to deliver our services effectively and improve your experience.</p>
+  </section>
+
+  <section id="terms">
+    <h2>Terms & Conditions</h2>
+    <p style="text-align: center;">By using Sackurit, you agree to our fair use policy, and acknowledge that services are provided by independent providers vetted through our platform. We reserve the right to update these terms as needed.</p>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Newsletter</h2>
+    <p>Be the first to know when we launch on app stores.</p>
+    <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Sackurit Technologies. Built for Nigeria. Powered by innovation.
   </footer>
+
 </body>
 </html>
