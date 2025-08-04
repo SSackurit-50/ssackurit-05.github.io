@@ -11,7 +11,7 @@
       --secondary: #00a8ff;
       --light: #ffffff;
       --dark: #111;
-      --gray: #f2f2f2;
+      --gray: #f8f9fa;
     }
 
     * {
@@ -90,6 +90,12 @@
       font-weight: bold;
       min-width: 140px;
       text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .services div:hover {
+      transform: translateY(-4px);
     }
 
     .video-section {
@@ -103,7 +109,7 @@
       margin: 0 auto 20px;
       overflow: hidden;
       border-radius: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .portrait-video-container video {
@@ -111,6 +117,20 @@
       height: 100%;
       object-fit: cover;
       border-radius: 25px;
+    }
+
+    .audio-wrapper {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 12px;
+      background: var(--gray);
+      outline: none;
     }
 
     .testimonials {
@@ -124,6 +144,7 @@
       padding: 20px;
       border-radius: 20px;
       text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
     }
 
     .testimonial img {
@@ -140,6 +161,7 @@
       border-radius: 25px;
       text-align: center;
       margin-top: 40px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.07);
     }
 
     .newsletter input {
@@ -149,6 +171,7 @@
       width: 60%;
       max-width: 300px;
       margin-right: 10px;
+      outline: none;
     }
 
     .newsletter button {
@@ -158,6 +181,11 @@
       background: var(--primary);
       color: white;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .newsletter button:hover {
+      background: #a80000;
     }
 
     footer {
@@ -178,6 +206,11 @@
       text-decoration: none;
       color: var(--primary);
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
     }
   </style>
 </head>
@@ -204,12 +237,9 @@
       <div>Dispatch</div>
       <div>Laundry</div>
       <div>Food Delivery</div>
-      <div>Home Tutors</div>
-      <div>Lawyers</div>
       <div>Mechanics</div>
       <div>Plumbers</div>
       <div>Barbers</div>
-      <div>Digital Services</div>
     </div>
   </section>
 
@@ -220,6 +250,12 @@
         <source src="video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+    </div>
+    <div class="audio-wrapper">
+      <audio controls>
+        <source src="song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </div>
   </section>
 
